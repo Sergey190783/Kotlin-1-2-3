@@ -1,19 +1,16 @@
 package ru.netology
-
+const val LIKE_SYMBOL = '\u1F44'
 fun getStatistics(numbersUsers: Int): String {
-    val like = '\u1F44'
-    var likesUsers = ""
-    if (numbersUsers % 10 == 1 && numbersUsers != 11)
-        likesUsers = "Понравилось $like $numbersUsers человеку Вконтакте!"
+    return if (numbersUsers % 10 == 1 && numbersUsers != 11)
+        "Понравилось $LIKE_SYMBOL $numbersUsers человеку Вконтакте!"
     else if (numbersUsers <= 0)
-        likesUsers = "Будьте первым кто оценил эту запись"
+        "Будьте первым кто оценил эту запись"
     else
-        likesUsers = "Понравилось $like $numbersUsers людям Вконтакте!"
-    return likesUsers
+        "Понравилось $LIKE_SYMBOL $numbersUsers людям Вконтакте!"
 }
 fun main() {
     println(getStatistics(1000))
     println(getStatistics(21))
     println(getStatistics(11))
-    println(getStatistics(0))
+    println(getStatistics(1))
 }

@@ -1,15 +1,13 @@
 package ru.netology
-
 fun countCommission(amount: Long): Long {
-    val commissionAmount: Double = 0.0075
-    var finalCommission: Long = (amount * commissionAmount).toLong()
-    if (finalCommission < 3500)
-        finalCommission = 3500
-    return finalCommission
+    val commissionAmount = 0.0075
+    val finalCommission = (amount * commissionAmount).toLong()
+    return if (finalCommission < 3500)
+        3500
+    else
+        finalCommission
 }
-
 fun main() {
-
     val t = countCommission(1000000L)
     println(t)
     println(countCommission(2000000))
